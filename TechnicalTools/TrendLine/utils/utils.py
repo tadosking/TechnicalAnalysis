@@ -56,6 +56,11 @@ class TrendLineDetectorChunk(Chunk) :
         if me is good_looking_guy :
             raise Exception("hey miss chunk ! you can't marry with yourself !!")
         me._data.extend(good_looking_guy._data)
+
+        # new parent is ME. fixed @ Nov 30th, 2022.
+        for child in good_looking_guy._data :
+            child.set_parent(me)
+
         good_looking_guy.remove()
     
     @property
