@@ -7,7 +7,7 @@ from more_itertools import windowed
 from . utils.utils    import TrendLineDetectorChunks
 from .. DataOrganizer import DataPoints
 from . trendline  import TrendLine
-from . channlline import ChannelLine
+from . channelline import ChannelLine
 
 
 class ChannelLineDetector() :
@@ -96,6 +96,7 @@ class ChannelLineDetector() :
         
         infos = {
             'domain' : (xs[0],xs[-1]),
+            'channel_range' : coefs[0] - coefs[1], # added @ Nov 30th, 2022.
             'fitting_method' : 'linear_fit',
             'coefs' : coefs,
             'resid' : (errs**2).sum(),
