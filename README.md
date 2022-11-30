@@ -159,23 +159,16 @@ import itertools
 colors = itertools.cycle(['red','blue', 'orange', 'limegreen', 'violet'])
 markers = itertools.cycle(['o',',','*','d'])
 
+ax1.set_title('Each Chunk is Shown by Color and Marker')
+
 for chunk in chunks :
     dps = chunk.to_datapoints()
     ax1.scatter(dps.xs, dps.ys, c = next(colors), marker=next(markers))
-    
-ax1.set_title('Each Chunk is Showed by Color and Marker')
 ```
 
 
-
-
-    Text(0.5, 1.0, 'Each Chunk is Showed by Color and Marker')
-
-
-
-
     
-![png](README_files/README_19_1.png)
+![png](README_files/README_19_0.png)
     
 
 
@@ -252,6 +245,7 @@ ax1 = fig.add_subplot(1,1,1)
 mpf.plot(data,type='candle',ax=ax1)
 
 threshold = 3
+ax1.set_title('Some Trend Lines Are Shown.')
 
 for l in support_lines :
     if calc_verr(l)**0.5 < threshold :
@@ -260,20 +254,11 @@ for l in support_lines :
 for l in resistance_lines :
     if calc_verr(l)**0.5 < threshold :
         ax1.plot(l.xs,l.ys, c='tomato', linewidth=1)
-        
-ax1.set_title('Some Trend Lines Are Showed.')
 ```
 
 
-
-
-    Text(0.5, 1.0, 'Some Trend Lines Are Showed.')
-
-
-
-
     
-![png](README_files/README_29_1.png)
+![png](README_files/README_29_0.png)
     
 
 
