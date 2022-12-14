@@ -239,6 +239,11 @@ def calc_verr(l) :
 
 
 ```python
+
+```
+
+
+```python
 # plot
 fig = mpf.figure(figsize=(15,3),style='default')
 ax1 = fig.add_subplot(1,1,1)
@@ -248,17 +253,17 @@ threshold = 3
 ax1.set_title('Some Trend Lines Are Shown.')
 
 for l in support_lines :
-    if calc_verr(l)**0.5 < threshold :
+    if calc_verr(l)**0.5 < threshold and l.slope>0:
         ax1.plot(l.xs,l.ys, c= 'royalblue', linewidth=1 )
         
 for l in resistance_lines :
-    if calc_verr(l)**0.5 < threshold :
+    if calc_verr(l)**0.5 < threshold and l.slope<0 :
         ax1.plot(l.xs,l.ys, c='tomato', linewidth=1)
 ```
 
 
     
-![png](README_files/README_29_0.png)
+![png](README_files/README_30_0.png)
     
 
 
@@ -299,7 +304,7 @@ for l in channel_lines :
 
 
     
-![png](README_files/README_33_0.png)
+![png](README_files/README_34_0.png)
     
 
 
